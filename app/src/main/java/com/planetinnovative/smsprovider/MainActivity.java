@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
                 eventValues.put("eventTimezone", TimeZone.getDefault().getID());
                 Long startDate = System.currentTimeMillis();
                 long endDate = startDate + 1000 * 60 * 60; // For next 1hr
-                eventValues.put("dtstart", startDate);
+                eventValues.put(CalendarContract.Events.DTSTART, startDate);
                 eventValues.put("dtend", endDate);
                 getContentResolver().insert(calendar, eventValues);
                 if (ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.READ_CALENDAR) != PackageManager.PERMISSION_GRANTED) {
